@@ -1,19 +1,17 @@
 <template>
   <div class="layout">
-    <Header />
+    <UiHeaderPage />
+
     <main class="h-full">
       <Transition name="fade">
         <slot />
       </Transition>
     </main>
-    <Navbar />
+    <UiNavbarPage />
   </div>
 </template>
 
-<script lang="ts" setup>
-import Header from "~/shared/ui/Header.vue";
-import Navbar from "~/shared/ui/Navbar.vue";
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
 .fade-enter-active,

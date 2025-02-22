@@ -1,9 +1,7 @@
 <template>
-  <div>pro</div>
+  <NuxtLayout name="project">
+    <div>pro</div>
+  </NuxtLayout>
 </template>
 
-<script lang="ts" setup>
-definePageMeta({
-  layout: "default",
-});
-</script>
+<script lang="ts" setup></script>
