@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --main-clr: #18113b;
+  --accent-clr: #088ae7;
+}
+
+@layer base {
+  :where(html, body, #__nuxt) {
+    height: 100%;
+    background-color: var(--main-clr);
+    color: whitesmoke;
+  }
+}
