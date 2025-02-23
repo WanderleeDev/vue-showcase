@@ -2,8 +2,8 @@
   <nav
     class="flex flex-col items-center border-l-2 border-l-purple-200 h-full w-full py-[2vw]"
   >
-    <ButtonBorder>
-      <AlignCenter class="size-[1.5vw]" />
+    <ButtonBorder @click="toggleModal">
+      <AlignCenter class="size-icon-xs" />
     </ButtonBorder>
 
     <ul class="flex flex-col justify-center items-center grow gap-[1.5vw]">
@@ -29,11 +29,22 @@
         </NuxtLink>
       </li>
     </ul>
+
+    <Teleport to="body">
+      <Transition name="fade" mode="in-out">
+        <UiModalNavbar v-if="showModal" @close="toggleModal(false)" />
+      </Transition>
+    </Teleport>
   </nav>
 </template>
 
 <script lang="ts" setup>
 import { AlignCenter, FolderGit2, House } from "lucide-vue-next";
+
+const showModal = ref(false);
+const toggleModal = (value = true) => {
+  showModal.value = value;
+};
 </script>
 
 <style scoped>
