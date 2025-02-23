@@ -9,7 +9,10 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { register } from "swiper/element/bundle";
+register();
+</script>
 
 <style>
 .fade-enter-active,

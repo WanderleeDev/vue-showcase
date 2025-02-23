@@ -70,7 +70,7 @@ onBeforeMount(() => {
   document.body.style.overflow = "hidden";
 });
 
-onMounted(() => {
+onUnmounted(() => {
   document.body.style.overflow = "auto";
 });
 </script>

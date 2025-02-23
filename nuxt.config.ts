@@ -14,4 +14,5 @@ export default defineNuxtConfig({
   },
 
   modules: ["nitro-cloudflare-dev", "@nuxt/fonts"],
+  fonts: {},
 });

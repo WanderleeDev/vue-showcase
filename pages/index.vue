@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1 class="text-2xl">Index page</h1>
+  <div class="grid place-content-center h-full">
+    <h1 class="text-[30vw] font-extrabold">V</h1>
+    <Slide class="w-80" />
   </div>
 </template>
 <script setup lang="ts">
