@@ -1,14 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  --main-clr: #18113b;
-  --accent-clr: #088ae7;
+  /* colors */
+  --color-main: #18113b;
+  --color-accent: #088ae7;
 }
 
 @layer base {
   :where(html, body, #__nuxt) {
     height: 100%;
-    background-color: var(--main-clr);
+    background-color: var(--color-main);
     color: whitesmoke;
+  }
+}
+
+@layer utilities {
+  .font-nav {
+    font-size: 5vw;
+
+    @media (width >= 768px) {
+      font-size: 4vw;
+    }
+
+    @media (width >= 1024px) {
+      font-size: 3vw;
+    }
+  }
+
+  .size-icon {
+    height: 5vw;
+    width: 5vw;
+
+    @media (width >= 768px) {
+      height: 4vw;
+      width: 4vw;
+    }
+
+    @media (width >= 1024px) {
+      height: 3vw;
+      width: 3vw;
+    }
+  }
+
+  .size-icon-xs {
+    height: 4vw;
+    width: 4vw;
+
+    @media (width >= 768px) {
+      height: 3vw;
+      width: 3vw;
+    }
+
+    @media (width >= 1024px) {
+      height: 2vw;
+      width: 2vw;
+    }
   }
 }

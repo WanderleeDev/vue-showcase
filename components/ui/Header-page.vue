@@ -13,7 +13,7 @@
       >
         Develop by WanderleeDev
       </NuxtLink>
-      <span class="bg-blue-400 rounded-full size-[.5vw] block"></span>
+      <span class="bg-accent rounded-full size-[.5vw] block"></span>
     </div>
   </header>
 </template>

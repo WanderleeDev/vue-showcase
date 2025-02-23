@@ -3,9 +3,7 @@
     <UiHeaderPage />
 
     <main class="h-full">
-      <Transition name="fade">
-        <slot />
-      </Transition>
+      <slot />
     </main>
     <UiNavbarPage />
   </div>
@@ -13,12 +11,13 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
+<style>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter,
+
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
