@@ -71,12 +71,11 @@ const toggleModal = (value = true) => {
 
 .translate-enter-active,
 .translate-leave-active {
-  transform: translateX(0%);
-  transform: translateX(-100%);
+  transition: transform 0.35s;
 }
 
 .translate-enter-from,
 .translate-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 </style>
