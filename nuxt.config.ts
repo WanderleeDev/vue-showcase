@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages",
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxt/fonts"],
-  fonts: {},
+  modules: [
+    "nitro-cloudflare-dev",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@vueuse/nuxt",
+  ],
 });

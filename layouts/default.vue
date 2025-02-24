@@ -3,6 +3,7 @@
     <UiHeaderPage />
 
     <main class="h-full">
+      <h1 class="sr-only">Vue projects</h1>
       <slot />
     </main>
     <UiNavbarPage />

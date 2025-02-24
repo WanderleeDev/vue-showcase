@@ -1,7 +1,15 @@
 <template>
-  <div class="grid place-content-center h-full">
-    <h1 class="title-char lg">V</h1>
-    <!-- <Slide class="w-80" /> -->
+  <!-- <UiVuePresentation /> -->
+  <div
+    class="grid place-content-center w-full h-full size-vue-icon"
+    ref="container"
+  >
+    <Icon
+      class="scale-150 row-[1/2] col-[1/2] blur-[5.5rem] bg-[linear-gradient(-45deg,#41b88380_30%,#35495e80)]"
+      name="devicon-vuejs"
+    />
+    <Icon class="scale-105 row-[1/2] col-[1/2] blur-sm" name="devicon-vuejs" />
+    <Icon class="row-[1/2] col-[1/2] z-10" name="devicon-vuejs" />
   </div>
 </template>
 <script setup lang="ts">
@@ -11,14 +19,7 @@ useSeoMeta({
 });
 </script>
 <style scoped>
-.title-char {
-  font-size: 50vw;
-  font-weight: 900;
-  @media (width >= 768px) {
-    font-size: 40vw;
-  }
-  @media (width >= 1024px) {
-    font-size: 30vw;
-  }
+.size-vue-icon {
+  font-size: clamp(5rem, calc(35vw + 1rem), 18rem);
 }
 </style>

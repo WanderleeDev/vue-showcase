@@ -31,7 +31,7 @@
     </ul>
 
     <Teleport to="body">
-      <Transition name="fade" mode="in-out">
+      <Transition name="translate" mode="in-out">
         <UiModalNavbar v-if="showModal" @close="toggleModal(false)" />
       </Transition>
     </Teleport>
@@ -67,5 +67,16 @@ const toggleModal = (value = true) => {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(0.5rem);
   transform: scale(1.3);
+}
+
+.translate-enter-active,
+.translate-leave-active {
+  transform: translateX(0%);
+  transform: translateX(-100%);
+}
+
+.translate-enter-from,
+.translate-leave-to {
+  transform: translateX(-100%);
 }
 </style>

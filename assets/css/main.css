@@ -9,6 +9,9 @@ lg: 1024
   /* colors */
   --color-main: #18113b;
   --color-accent: #088ae7;
+
+  /* fonts */
+  --font-Salsa: "Salsa", serif;
 }
 
 @layer base {
@@ -16,9 +19,8 @@ lg: 1024
     height: 100%;
     background-color: var(--color-main);
     color: whitesmoke;
-    font-family: "Alata", serif;
-    font-family: "Righteous", serif;
-    font-family: "Salsa", serif;
+    /* font-family: "Alata", serif; */
+    /* font-family: "Righteous", serif; */
     /* font-family: "Bubblegum Sans", serif; */
     /* font-family: "Yuji Hentaigana Akebono", serif; */
   }
@@ -64,6 +66,16 @@ lg: 1024
     @media (width >= 1024px) {
       height: 2vw;
       width: 2vw;
+    }
+  }
+
+  .title-char {
+    font-size: 50vw;
+    @media (width >= 768px) {
+      font-size: 40vw;
+    }
+    @media (width >= 1024px) {
+      font-size: 30vw;
     }
   }
 }
