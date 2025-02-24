@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* 
+md: 768
+lg: 1024
+*/
+
 @theme {
   /* colors */
   --color-main: #18113b;
@@ -12,6 +17,10 @@
     background-color: var(--color-main);
     color: whitesmoke;
     font-family: "Alata", serif;
+    font-family: "Righteous", serif;
+    font-family: "Salsa", serif;
+    /* font-family: "Bubblegum Sans", serif; */
+    /* font-family: "Yuji Hentaigana Akebono", serif; */
   }
 }
 
