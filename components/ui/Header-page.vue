@@ -5,7 +5,7 @@
     <div class="bg-red-400 size-[2vw]"></div>
     <div class="flex flex-col grow justify-center items-center gap-[1.5vw]">
       <NuxtLink
-        class="link hover:text-blue-200 transition-colors"
+        class="link hover:text-blue-200 transition-colors tracking-wider"
         to="https://github.com/WanderleeDev"
         external
         aria-label="Github WanderleeDev"
@@ -36,7 +36,7 @@
   }
 
   @media (width >= 1200px) {
-    font-size: 1vw;
+    font-size: 0.9vw;
   }
 }
 </style>
