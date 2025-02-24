@@ -1,9 +1,8 @@
 <template>
-  <div class="layout">
+  <div class="layout overflow-hidden">
     <UiHeaderPage
       class="starting:-translate-x-full transition-transform delay-1000 duration-500 linear"
     />
-
     <main class="h-full">
       <h1 class="sr-only">Vue projects</h1>
       <slot />
@@ -35,6 +34,5 @@ register();
   height: 100%;
   grid-template-rows: 1fr;
   grid-template-columns: 10vw 1fr 10vw;
-  overflow: hidden;
 }
 </style>
