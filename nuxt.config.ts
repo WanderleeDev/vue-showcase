@@ -13,11 +13,17 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages",
   },
 
+  image: {
+    quality: 80,
+    format: ["webp"],
+  },
+
   modules: [
     "nitro-cloudflare-dev",
     "@nuxt/fonts",
     "@nuxt/icon",
     "@vueuse/nuxt",
     "@pinia/nuxt",
+    "@nuxt/image",
   ],
 });

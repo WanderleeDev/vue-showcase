@@ -9,6 +9,8 @@ lg: 1024
   /* colors */
   --color-main: #18113b;
   --color-accent: #088ae7;
+  --color-vue1: #41b883;
+  --color-vue2: #496380;
 
   /* fonts */
   --font-Salsa: "Salsa", serif;

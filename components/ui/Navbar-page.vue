@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex flex-col items-center border-l-2 border-l-purple-200 h-full w-full py-[2vw]"
+    class="hidden md:flex flex-col items-center shadow-vue2 shadow-sm h-full w-full py-[2vw]"
   >
     <ButtonBorder @click="toggleModal">
       <AlignCenter class="size-icon-xs" />
@@ -9,23 +9,32 @@
     <ul class="flex flex-col justify-center items-center grow gap-[1.5vw]">
       <li>
         <NuxtLink class="router-link" to="/" active-class="active-link">
-          <House class="size-[1.5vw]" />
+          <Icon class="text-[1.5vw]" name="fluent-color:home-20" />
         </NuxtLink>
       </li>
       <li>
         <NuxtLink class="router-link" to="/projects" active-class="active-link">
-          <FolderGit2 class="size-[1.5vw]" />
+          <Icon class="text-[1.5vw]" name="vscode-icons:folder-type-github" />
         </NuxtLink>
       </li>
       <li>
         <NuxtLink
           class="router-link"
           to="https://entry-page-angular.vercel.app/"
-          active-class="active-link"
           target="_blank"
           external
         >
-          <IconAngular class="size-[1.5vw]" />
+          <Icon class="text-[1.5vw]" name="devicon:angular" />
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          class="router-link"
+          to="https://react-showcase-three.vercel.app/"
+          target="_blank"
+          external
+        >
+          <Icon class="text-[1.5vw]" name="devicon:react" />
         </NuxtLink>
       </li>
     </ul>

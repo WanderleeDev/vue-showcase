@@ -8,7 +8,7 @@
       <slot />
     </main>
     <UiNavbarPage
-      class="starting:translate-x-full transition-transform delay-1000 duration-500 linear"
+      class="starting:translate-x-full transition-transform delay-1000 duration-500 linear lg"
     />
   </div>
 </template>
@@ -18,7 +18,7 @@ import { register } from "swiper/element/bundle";
 register();
 </script>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -30,9 +30,17 @@ register();
 }
 
 .layout {
+  --width-column: 13vw;
+
   display: grid;
   height: 100%;
   grid-template-rows: 1fr;
-  grid-template-columns: 10vw 1fr 10vw;
+  grid-template-columns: 1fr;
+  @media (width >= 768px) {
+    grid-template-columns: var(--width-column) 1fr var(--width-column);
+  }
+  @media (width >= 1024px) {
+    --width-column: 9vw;
+  }
 }
 </style>

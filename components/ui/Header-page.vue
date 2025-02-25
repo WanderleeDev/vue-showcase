@@ -1,9 +1,25 @@
 <template>
   <header
-    class="flex flex-col border-r-2 border-purple-200 h-full w-full justify-center items-center py-[2vw]"
+    class="hidden md:flex flex-col shadow-sm shadow-vue2 h-full w-full justify-center items-center py-[2vw]"
   >
-    <div class="bg-red-400 size-[2vw]"></div>
-    <div class="flex flex-col grow justify-center items-center gap-[1.5vw]">
+    <NuxtLink
+      class="rounded-full overflow-hidden"
+      to="https://github.com/WanderleeDev"
+      external
+      aria-label="Github WanderleeDev"
+      target="_blank"
+    >
+      <NuxtImg
+        class="size-[6vw] lg:size-[5vw] xl:size-[4vw]"
+        src="https://res.cloudinary.com/dy8gpozi6/image/upload/v1740447261/meme_gato_rwte5r.webp"
+        alt="wanderleedev github avatar"
+        height="40"
+        width="40"
+      />
+    </NuxtLink>
+    <div
+      class="flex flex-col grow justify-center items-center gap-[1.5vw] lg:font-bold"
+    >
       <NuxtLink
         class="link hover:text-blue-200 transition-colors tracking-wider"
         to="https://github.com/WanderleeDev"

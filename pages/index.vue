@@ -1,8 +1,6 @@
 <template>
   <div class="grid place-content-center w-full h-full">
-    <NuxtLink to="projects" aria-label="view projects">
-      <UiVuePresentation />
-    </NuxtLink>
+    <UiVueAnimation />
   </div>
 </template>
 <script setup lang="ts">
@@ -11,4 +9,3 @@ useSeoMeta({
   description: "My projects",
 });
 </script>
-<style scoped></style>

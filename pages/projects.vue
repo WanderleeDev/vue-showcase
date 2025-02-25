@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout name="project">
     <div>pro</div>
+    <Rings />
   </NuxtLayout>
 </template>
 
