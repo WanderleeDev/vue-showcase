@@ -14,7 +14,7 @@
         @click="closeModal"
         aria-label="close navbar"
       >
-        <X class="size-icon-xs" />
+        <Icon name="material-symbols:close-rounded" class="size-icon-xs" />
       </ButtonBorder>
 
       <ul
@@ -27,7 +27,7 @@
             to="/"
             active-class="active-link"
           >
-            <House class="size-icon" />
+            <Icon class="size-icon" name="fluent-color:home-20" />
             <span class="uppercase block">home</span>
           </NuxtLink>
         </li>
@@ -38,7 +38,7 @@
             to="/projects"
             active-class="active-link"
           >
-            <FolderGit2 class="size-icon" />
+            <Icon class="size-icon" name="vscode-icons:folder-type-github" />
             <span class="uppercase block">projects</span>
           </NuxtLink>
         </li>
@@ -47,12 +47,23 @@
             class="router-link"
             @click="closeModal"
             to="https://entry-page-angular.vercel.app/"
-            active-class="active-link"
             target="_blank"
             external
           >
-            <IconAngular class="size-icon" />
+            <Icon name="devicon:angular" class="size-icon" />
             <span class="uppercase block">Angular projects</span>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            class="router-link"
+            @click="closeModal"
+            to="https://react-showcase-three.vercel.app/"
+            target="_blank"
+            external
+          >
+            <Icon name="devicon:react" class="size-icon" />
+            <span class="uppercase block">React projects</span>
           </NuxtLink>
         </li>
       </ul>
