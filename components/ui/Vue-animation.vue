@@ -1,14 +1,13 @@
 <template>
-  <Rings :animation-time="10">
+  <Rings class="container-effect" :animation-time="10" ref="element">
     <NuxtLink
       class="grid place-content-center size-vue-icon translate-y-[1.5vw]"
       to="projects"
       aria-label="view projects"
     >
       <Icon
-        class="scale-[2] row-[1/2] col-[1/2] blur-[4.5rem] bg-[linear-gradient(-45deg,#41b88380_30%,#35495e80)]"
+        class="scale-[2] row-[1/2] col-[1/2] blur-[4.5rem] bg-[linear-gradient(-45deg,#41b88380_30%,#35495e80)] drop"
         :class="{ 'background-animation': !mainAnimation.initAnimation }"
-        @animationend="catchAnimationEnd"
         name="devicon-vuejs"
       />
       <Icon
@@ -29,10 +28,34 @@
 import { useMainAnimation } from "~/stores/mainAnimation";
 
 const mainAnimation = useMainAnimation();
-const catchAnimationEnd = () => (mainAnimation.$state.initAnimation = true);
+const element = ref(null);
+const { elementX, elementY, isOutside, elementHeight, elementWidth } =
+  useMouseInElement(element);
+
+const containerTransform = computed(() => {
+  const MAX_ROTATION = 10;
+  const rX = (
+    MAX_ROTATION / 2 -
+    (elementY.value / elementHeight.value) * MAX_ROTATION
+  ).toFixed(2);
+  const rY = (
+    (elementX.value / elementWidth.value) * MAX_ROTATION -
+    MAX_ROTATION / 2
+  ).toFixed(2);
+  return isOutside.value
+    ? ""
+    : `skewX(${rX}deg) skewY(${rY}deg) translateY(${rY}vw) translateX(${rX}vw)`;
+});
 </script>
 
 <style scoped>
+.container-effect {
+  transform: v-bind(containerTransform);
+  transform-origin: center;
+  transition: transform 300ms linear;
+  perspective: 1000px;
+}
+
 .size-vue-icon {
   font-size: 35vw;
   @media (width >= 768px) {

@@ -1,32 +1,25 @@
 <template>
-  <div class="angularLogo" :style="{ '--time-animation': `${duration}s` }">
+  <div
+    class="container"
+    :style="{ '--time-animation': `${animationTime}s` }"
+    v-bin="$attrs"
+  >
+    <div class="container-ring container-outset animate-fade"></div>
     <div
-      class="angularLogo-ring angularLogo-outset starting:opacity-0 delay-[1.8s] transition-opacity"
+      class="container-ring container-inset shadow-2xl shadow-white/5 animate-fade"
     ></div>
-    <div
-      class="angularLogo-ring angularLogo-inset starting:opacity-0 delay-[1.8s] transition-opacity"
-    ></div>
-    <div
-      class="angularLogo-icon"
-      @mouseenter="duration = animationTime / 2"
-      @mouseleave="duration = animationTime"
-    >
+    <div class="container-slot">
       <slot />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-interface Props {
-  animationTime: number;
-}
-
-const { animationTime = 10 } = defineProps<Props>();
-const duration = ref(animationTime);
+const { animationTime = 10 } = defineProps<{ animationTime: number }>();
 </script>
 
 <style scoped>
-.angularLogo {
+.container {
   --color-ring1: #41b88370;
   --color-ring2: #49638070;
   --size-ring1: 20rem;
@@ -45,7 +38,7 @@ const duration = ref(animationTime);
   position: relative;
   margin: auto;
 
-  & .angularLogo-ring {
+  & .container-ring {
     grid-area: 1/1/1/1;
     position: relative;
     border-radius: 50%;
@@ -73,12 +66,14 @@ const duration = ref(animationTime);
     }
   }
 
-  & .angularLogo-inset {
+  & .container-inset {
     border: solid 0.1rem var(--color-ring2);
     height: var(--size-ring2);
     width: var(--size-ring2);
     rotate: var(--size-ring1);
     animation: rotate var(--time-animation) linear infinite;
+    background-color: hwb(0 100% 0% / 0.02);
+    border: none;
 
     &::before {
       background: var(--color-ball1);
@@ -89,12 +84,13 @@ const duration = ref(animationTime);
     }
   }
 
-  & .angularLogo-outset {
+  & .container-outset {
     border: dotted 0.1rem var(--color-ring1);
     height: var(--size-ring1);
     width: var(--size-ring1);
     rotate: var(--rotate-ring2);
     animation: rotate var(--time-animation) linear reverse infinite;
+    background-color: hwb(0 0% 100% / 0.3);
 
     &::before {
       background: var(--color-ball3);
@@ -105,7 +101,7 @@ const duration = ref(animationTime);
     }
   }
 
-  & .angularLogo-icon {
+  & .container-slot {
     grid-area: 1/1/1/1;
     width: fit-content;
   }

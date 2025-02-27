@@ -3,7 +3,7 @@
     class="hidden md:flex flex-col items-center shadow-vue2 shadow-sm h-full w-full py-[2vw]"
   >
     <ButtonBorder @click="toggleModal">
-      <AlignCenter class="size-icon-xs" />
+      <Icon name="heroicons:bars-2-solid" class="size-icon-xs" />
     </ButtonBorder>
 
     <ul class="flex flex-col justify-center items-center grow gap-[1.5vw]">

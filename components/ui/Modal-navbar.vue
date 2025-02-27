@@ -14,7 +14,7 @@
         @click="closeModal"
         aria-label="close navbar"
       >
-        <X class="size-icon-xs" />
+        <Icon name="material-symbols:close-rounded" class="size-icon-xs" />
       </ButtonBorder>
 
       <ul
