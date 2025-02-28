@@ -2,7 +2,6 @@
   <section
     class="p-[clamp(5%,calc(2vw+.5rem),3rem)] overflow-y-auto h-dvh flex flex-col gap-[10vw] customScroll"
   >
-    <TypographyTitle :level="2" class="sr-only">Projects</TypographyTitle>
     <slot />
   </section>
 </template>

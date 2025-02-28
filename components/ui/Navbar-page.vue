@@ -9,11 +9,14 @@
     <ul class="flex flex-col justify-center items-center grow gap-[1.5vw]">
       <li>
         <NuxtLink class="router-link" to="/" active-class="active-link">
+          <span class="sr-only">Go to home</span>
           <Icon class="text-[1.5vw]" name="fluent-color:home-20" />
         </NuxtLink>
       </li>
       <li>
         <NuxtLink class="router-link" to="/projects" active-class="active-link">
+          <span class="sr-only">Go to projects</span>
+
           <Icon class="text-[1.5vw]" name="vscode-icons:folder-type-github" />
         </NuxtLink>
       </li>
@@ -24,6 +27,7 @@
           target="_blank"
           external
         >
+          <span class="sr-only">Go to angular projects</span>
           <Icon class="text-[1.5vw]" name="devicon:angular" />
         </NuxtLink>
       </li>
@@ -32,8 +36,10 @@
           class="router-link"
           to="https://react-showcase-three.vercel.app/"
           target="_blank"
+          aria-label="Go to React projects"
           external
         >
+          <span class="sr-only">Go to React projects</span>
           <Icon class="text-[1.5vw]" name="devicon:react" />
         </NuxtLink>
       </li>
@@ -48,8 +54,6 @@
 </template>
 
 <script lang="ts" setup>
-import { AlignCenter, FolderGit2, House } from "lucide-vue-next";
-
 const showModal = ref(false);
 const toggleModal = (value = true) => {
   showModal.value = value;

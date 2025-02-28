@@ -1,6 +1,6 @@
 <template>
   <section
-    class="rounded-3xl flex flex-col gap-[1vw] w-full h-full bg-pink-800 container-project lg:flex-row-reverse lg:h-[35vw] font-Inter"
+    class="rounded-3xl flex flex-col gap-[1vw] w-full h-full bg-pink-800 lg:flex-row-reverse lg:h-[35vw] font-Inter"
     :style="backgroundStyles"
     v-bind="$attrs"
   >
@@ -22,12 +22,13 @@
         width="100"
       />
     </div>
-    <div class="p-[5%] lg:basis-2/4">
-      <ul></ul>
+    <div
+      class="p-[5%] lg:basis-2/4 lg:p-[5%_0_5%_5%] flex flex-col lg:justify-between gap-[5vw]"
+    >
       <TypographyTitle
-        class="font-Sora-Semi-Bold-Upload"
-        appearance="h2"
-        :level="2"
+        class="font-Saira-stencil-one"
+        appearance="h3"
+        :level="3"
       >
         {{ name }}
       </TypographyTitle>

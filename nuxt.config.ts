@@ -1,9 +1,13 @@
 import tailwindcss from "@tailwindcss/vite";
+import { metadata } from "./constants/metadata.global";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  app: {
+    head: metadata,
+  },
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
@@ -28,10 +32,6 @@ export default defineNuxtConfig({
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
     redirect: false,
-  },
-
-  runtimeConfig: {
-    public: {},
   },
 
   modules: [

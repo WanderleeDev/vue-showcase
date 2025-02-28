@@ -4,10 +4,11 @@
     :to="deploy"
     :style="{ background: background }"
     target="_blank"
-    :aria-label="`ver proyectos extra de ${name}`"
-    :title="`ir a proyects ${name} extra`"
+    :aria-label="`Go to ${name} projects`"
+    :title="`Go to ${name} projects`"
     external
   >
+    <span class="sr-only">Go to {{ name }} projects</span>
     <div class="relative grid h-full">
       <TypographyTitle
         class="font-Saira-stencil-one w-max flex gap-2"
@@ -15,16 +16,14 @@
         appearance="h4"
       >
         <span class="font-semibold text-orange-600">&lt;</span>
-        Proyectos {{ name }}
+        Projects {{ name }}
         <span class="font-semibold text-orange-600">&gt;</span>
       </TypographyTitle>
       <TypographyParagraph class="font-Inter">
-        Algunos de mis proyectos realizados con {{ name }}.
+        Some of my projects carried out with {{ name }}.
       </TypographyParagraph>
     </div>
-    <div class="card-icon">
-      <Icon :name="icon" />
-    </div>
+    <Icon :name="icon" class="card-icon" />
   </NuxtLink>
 </template>
 

@@ -5,6 +5,7 @@
       to="projects"
       aria-label="view projects"
     >
+      <span class="sr-only">view projects</span>
       <Icon
         class="scale-[2] row-[1/2] col-[1/2] blur-[4.5rem] bg-[linear-gradient(-45deg,#41b88380_30%,#35495e80)] drop"
         :class="{ 'background-animation': !mainAnimation.initAnimation }"

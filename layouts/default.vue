@@ -4,7 +4,7 @@
       class="starting:-translate-x-full transition-transform delay-1000 duration-500 linear"
     />
     <main class="h-full">
-      <h1 class="sr-only">Vue projects</h1>
+      <h1 class="sr-only">Vue Showcase</h1>
       <slot />
     </main>
     <UiNavbarPage

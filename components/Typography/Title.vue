@@ -1,5 +1,4 @@
 <template>
-  <span></span>
   <component v-bind="$attrs" :is="tag" :class="appearances[appearance]">
     <slot />
   </component>
