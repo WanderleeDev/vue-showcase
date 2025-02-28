@@ -1,37 +1,37 @@
 <template>
   <NuxtLink
     class="relative grid place-items-center gap-8 p-8 rounded-lg overflow-hidden min-h-60"
-    :to="url"
+    :to="deploy"
     :style="{ background: background }"
     target="_blank"
-    :aria-label="`ver proyectos extra de ${title}`"
-    :title="`ir a proyects ${title} extra`"
+    :aria-label="`ver proyectos extra de ${name}`"
+    :title="`ir a proyects ${name} extra`"
     external
   >
     <div class="relative grid h-full">
-      <LazyTypographyTitle
+      <TypographyTitle
         class="font-Saira-stencil-one w-max flex gap-2"
         :level="2"
         appearance="h4"
       >
         <span class="font-semibold text-orange-600">&lt;</span>
-        Proyectos {{ title }}
+        Proyectos {{ name }}
         <span class="font-semibold text-orange-600">&gt;</span>
-      </LazyTypographyTitle>
+      </TypographyTitle>
       <TypographyParagraph class="font-Inter">
-        Algunos de mis proyectos realizados con {{ title }}.
+        Algunos de mis proyectos realizados con {{ name }}.
       </TypographyParagraph>
     </div>
     <div class="card-icon">
-      <slot />
+      <Icon :name="icon" />
     </div>
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
-import type { ExtraProject } from "~/shared/interfaces/ExtraProject.interface";
+import type { ProjectExtra } from "~/types";
 
-const { background, title, url } = defineProps<ExtraProject>();
+const { background, deploy, icon, name } = defineProps<ProjectExtra>();
 </script>
 
 <style scoped>

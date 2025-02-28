@@ -2,49 +2,33 @@
   <NuxtLayout name="project">
     <div class="cards">
       <CardProject
-        v-for="(card, i) in cards"
+        v-for="(project, i) in projects"
         class="cards-card"
-        :key="card"
+        :key="project.id"
         :style="{ '--index': `${i + 1}` }"
+        v-bind="project"
       />
     </div>
     <div class="flex flex-col lg:flex-row justify-between gap-[5vw]">
       <CardProjectExtra
-        v-for="{ background, title, url, icon } in extraProjects"
-        :key="title"
-        :background
-        :title
-        :url
-      >
-        <Icon :name="icon" />
-      </CardProjectExtra>
+        v-for="project in projectsExtra"
+        :key="project.name"
+        v-bind="project"
+      />
     </div>
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-import type { ExtraData } from "~/shared/interfaces/ExtraProject.interface";
+import { projectsExtra } from "~/constants/extraProjects";
+import type { Project } from "~/types";
 
-const cards: number[] = Array.from({ length: 7 }, (_, i) => i + 1);
-const extraProjects: ExtraData[] = [
-  {
-    title: "Angular",
-    url: "https://entry-page-angular.vercel.app/",
-    background: "linear-gradient(to left, #3a6186, #89253e);",
-    icon: "devicon:angular",
-  },
-  {
-    title: "React",
-    url: "https://react-showcase-three.vercel.app/",
-    background: "linear-gradient(to right, #4b79a1, #283e51);",
-    icon: "devicon:react",
-  },
-];
+const { data: projects } = await useFetch<Project[]>("/api/projects");
 </script>
 
 <style scoped>
 .cards {
-  --total-cards: v-bind(cards.length);
+  --total-cards: v-bind(projects.length);
   --spacing-y: 10vw;
   --card-height: calc(100% / var(--total-cards));
   --target-brightness: 50%;

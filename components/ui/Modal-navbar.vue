@@ -7,7 +7,7 @@
   >
     <div
       class="w-full h-full p-[5vw] md:w-8/12 md:h-10/12 flex flex-col justify-between items-center md:p-[2vw] bg-white/15 backdrop-blur-md rounded-md cursor-auto"
-      @click="(e) => e.stopPropagation()"
+      @click="(e: Event) => e.stopPropagation()"
     >
       <ButtonBorder
         class="self-end"
@@ -72,8 +72,6 @@
 </template>
 
 <script lang="ts" setup>
-import { X, FolderGit2, House } from "lucide-vue-next";
-
 const emit = defineEmits(["close"]);
 const closeModal = () => emit("close", false);
 
